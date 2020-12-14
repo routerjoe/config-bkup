@@ -5,7 +5,7 @@
   tasks:
    - name: Play 1 Get the device config
      ios_command:
-     commands: "show running-config"
+      commands: "show running-config"
      register: cli_result_config
 
    - name: Play 2 Write config to file
