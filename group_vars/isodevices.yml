@@ -4,5 +4,5 @@ ansible_network_os: "ios"
 ansible_user: "admin"
 ansible_password: "Cisco1234"
 ansible_port: 22
-restconf_port: 9443
+
 ...
