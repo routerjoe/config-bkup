@@ -1,0 +1,15 @@
+---
+- hosts: "iosdevices"
+  connection: network_cli
+
+  tasks:
+   - name: Play 1 Get the device config
+     ios_command:
+     commands: "show running-config"
+     register: cli_result_config
+
+   - name: Play 2 Write config to file
+     copy:
+       content: "{{ cli_result_config.stdout[0] }}\n"
+       dest: "~/aflab-network/backups/{{hostvars.localhost.DTG}}/{{inventory_hostname}}.cfg"
+...
