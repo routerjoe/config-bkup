@@ -1,12 +1,12 @@
 ---
 - hosts: "iosdevices"
   connection: network_cli
+  gather_facts: no
 
   tasks:
-   - name: Play 1 Get the device config
-     ios_command:
-      commands: "show running-config"
-     register: cli_result_config
+   - name: run show version on remote devices
+     cisco.ios.ios_command:
+      commands: show running-config 
 
    - name: Play 2 Write config to file
      copy:
